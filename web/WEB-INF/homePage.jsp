@@ -15,9 +15,6 @@
         <h1>Home Page!</h1>
         <p>${acct}</p>
         <br>
-        <form action="Home" method="post">
-            <input type="submit" value="Rest">
-            <input type="hidden" name="action" value="reset">
-        </form>
+            <a href="Login?logout">logout</a>
     </body>
 </html>

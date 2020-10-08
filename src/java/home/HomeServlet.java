@@ -38,14 +38,7 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        String action = request.getParameter("action");
-        if(action != null && action.equals("reset")){
-            session.invalidate();
-            session = request.getSession();
-        }
         
-        response.sendRedirect("Login?logout");
     }
 
 
