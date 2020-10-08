@@ -25,6 +25,13 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
+        String logout = request.getParameter("logout");
+        if(logout != null){
+            session.invalidate();
+            session = request.getSession();
+            String me = "you have successfully log out";
+            request.setAttribute("message", me); 
+        }
         String user = (String) session.getAttribute("acct");
         if(user != null){
             response.sendRedirect("Home");
